@@ -1,7 +1,61 @@
 [project]
-name = "7"
+name = "distributed-ai-agent-league"
 version = "0.1.0"
-description = "Add your description here"
+description = "Distributed AI Agent League System with Player, League Manager, and Referee agents"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "fastapi>=0.100.0",
+    "pydantic>=2.0.0",
+    "pydantic[email]>=2.0.0",
+    "httpx>=0.25.0",
+    "uvicorn[standard]>=0.20.0",
+    "typing-extensions>=4.5.0",
+    "python-dateutil>=2.8.0",
+]
+
+[project.optional-dependencies]
+quality = [
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+    "bandit[toml]>=1.7.0",
+    "radon>=6.0.0",
+    "vulture>=2.9.0",
+    "deptry>=0.12.0",
+    "types-requests>=2.31.0",
+]
+test = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "httpx[test]>=0.25.0",
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "C", "I", "N", "D", "UP", "S"]
+
+[tool.mypy]
+strict = true
+python_version = "3.13"
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+skips = ["B101"]
+
+[tool.vulture]
+min_confidence = 80
+paths = ["agents", "shared"]
+
+[dependency-groups]
+dev = [
+    "bandit>=1.9.2",
+    "deptry>=0.24.0",
+    "mypy>=1.19.0",
+    "radon>=6.0.1",
+    "ruff>=0.14.9",
+    "vulture>=2.14",
+]
