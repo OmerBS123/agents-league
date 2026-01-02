@@ -85,6 +85,21 @@ uv run python -m agents.referee
 uv run pytest test_integration.py -v
 ```
 
+**Run unit tests**
+```bash
+# Run all tests
+uv run pytest tests/ -v
+
+# Run with coverage
+uv run pytest tests/ --cov=agents --cov=shared --cov-report=html
+
+# Run specific test file
+uv run pytest tests/test_schemas.py -v
+
+# Run specific test class
+uv run pytest tests/test_schemas.py::TestMCPEnvelope -v
+```
+
 ### Output
 
 **When running start_league.sh, you'll see:**
