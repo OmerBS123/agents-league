@@ -7,3 +7,5 @@ This package contains shared components used across all agents:
 - Structured logging infrastructure
 - LLM strategy integration
 """
+
+__version__ = "0.1.0"

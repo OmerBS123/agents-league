@@ -8,3 +8,38 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Environment files (secrets)
+.env
+.env.*
+!.env.example
+
+# Security / Credentials
+*.key
+*.pem
+*.p12
+secrets/
+credentials/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Testing / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Quality checks output
+/quality-checks
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

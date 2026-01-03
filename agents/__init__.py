@@ -6,3 +6,5 @@ This package contains the core agent implementations:
 - Referee agent for match orchestration
 - League Manager for tournament coordination
 """
+
+__version__ = "0.1.0"
